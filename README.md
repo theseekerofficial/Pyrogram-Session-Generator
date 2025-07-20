@@ -37,8 +37,8 @@ Before running the script, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/pyrogram-session-generator.git
-cd pyrogram-session-generator
+git clone https://github.com/theseekerofficial/Pyrogram-Session-Generator.git
+cd Pyrogram-Session-Generator
 ```
 
 ### 2. Install Dependencies
@@ -194,8 +194,8 @@ Contributions are welcome! Here's how you can help:
 ### Development Setup
 
 ```bash
-git clone https://github.com/yourusername/pyrogram-session-generator.git
-cd pyrogram-session-generator
+git clone https://github.com/theseekerofficial/Pyrogram-Session-Generator.git
+cd Pyrogram-Session-Generator
 pip install -r requirements.txt
 ```
 
@@ -220,8 +220,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - **Telegram**: [@MrUnknown114](https://t.me/MrUnknown114)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/pyrogram-session-generator/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/pyrogram-session-generator/discussions)
+- **Issues**: [GitHub Issues](https://github.com/theseekerofficial/Pyrogram-Session-Generator/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/theseekerofficial/Pyrogram-Session-Generator/discussions)
 
 ---
 
