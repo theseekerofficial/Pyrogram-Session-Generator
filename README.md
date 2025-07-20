@@ -57,7 +57,7 @@ pip install pyrogram tgcrypto
 ### 4. Run the Generator
 
 ```bash
-python3 session_generator.py
+python3 pyrogram_session_gen.py
 ```
 
 ## 📖 How It Works
