@@ -1,0 +1,12 @@
+# Pyrogram Session String Generator Dependencies
+
+# Core Pyrogram library for Telegram MTProto API
+pyrogram>=2.0.106
+
+# Fast cryptographic library for better performance
+# Required for encryption/decryption operations
+tgcrypto>=1.2.5
+
+# Optional: For better async support (usually included with Python 3.7+)
+# asyncio is part of the standard library, but some systems might need this
+# asyncio>=3.4.3
