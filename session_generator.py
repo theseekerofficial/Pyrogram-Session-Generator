@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
 Pyrogram Session String Generator
-Run: pip install pyrogram tgcrypto
 """
 
 # 🔴 This script is created by The Seeker (Telegram: @MrUnknown114)
 
+import os
 import asyncio
+from datetime import datetime
 from pyrogram import Client
 from pyrogram.errors import (
     ApiIdInvalid,
-    ApiIdPublishedFlood,
-    AccessTokenInvalid,
     SessionPasswordNeeded,
     PasswordHashInvalid,
     PhoneCodeInvalid,
@@ -39,6 +38,77 @@ def get_credentials():
 
     return api_id, api_hash
 
+
+def save_session_to_file(session_string, phone_number):
+    """Save session string to a text file with credits"""
+    try:
+        # Create filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"session_string_{timestamp}.txt"
+
+        # Prepare file content with credits and session info
+        file_content = f"""# ═══════════════════════════════════════════════════════════════
+# 🔐 PYROGRAM SESSION STRING
+# ═══════════════════════════════════════════════════════════════
+# 
+# Generated on: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+# Phone Number: {phone_number}
+# 
+# ⚠️  SECURITY WARNING:
+# Keep this session string private and secure!
+# Do not share it with anyone or upload it publicly.
+# 
+# ═══════════════════════════════════════════════════════════════
+# 📱 USAGE EXAMPLE:
+# ═══════════════════════════════════════════════════════════════
+# 
+# from pyrogram import Client
+# 
+# app = Client(
+#     "my_account",
+#     session_string="YOUR_SESSION_STRING_BELOW",
+#     api_id=YOUR_API_ID,
+#     api_hash=YOUR_API_HASH
+# )
+# 
+# app.run()
+# 
+# ═══════════════════════════════════════════════════════════════
+# 🔴 CREDITS:
+# ═══════════════════════════════════════════════════════════════
+# 
+# Script Created by: The Seeker
+# Telegram: @MrUnknown114
+# GitHub: https://github.com/theseekerofficial/Pyrogram-Session-Generator
+# 
+# Thank you for using this tool! ⭐
+# If this helped you, consider giving the repository a star.
+# 
+# ═══════════════════════════════════════════════════════════════
+
+SESSION_STRING = {session_string}
+
+# ═══════════════════════════════════════════════════════════════
+# End of file - Keep this session string safe! 🔐
+# ═══════════════════════════════════════════════════════════════
+"""
+
+        # Write to file
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(file_content)
+
+        # Get absolute path
+        file_path = os.path.abspath(filename)
+
+        print(f"✅ Session string saved to: {filename}")
+        print(f"📁 Full path: {file_path}")
+        print("🔒 Remember to keep this file secure and private!")
+
+        return True
+
+    except Exception as e:
+        print(f"❌ Error saving file: {e}")
+        return False
 
 async def generate_session_string():
     """Generate Pyrogram session string"""
@@ -129,6 +199,18 @@ async def generate_session_string():
         print("from pyrogram import Client")
         print('app = Client("my_account", session_string="YOUR_SESSION_STRING")')
         print("app.run()")
+
+        print("\n" + "=" * 60)
+        save_choice = input("💾 Do you want to save this session string to a text file? (y/n): ").strip().lower()
+
+        if save_choice in ['y', 'yes', '1']:
+            print("📝 Saving session string to file...")
+            if save_session_to_file(session_string, phone_number):
+                print("🎉 Session string successfully saved!")
+            else:
+                print("⚠️  Failed to save file, but your session string is displayed above.")
+        else:
+            print("👍 Session string not saved to file. Make sure to copy it from above! This is the only time you'll see it.")
 
     except Exception as e:
         print(f"❌ Unexpected error: {e}")
