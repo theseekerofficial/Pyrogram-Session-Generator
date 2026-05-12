@@ -43,8 +43,19 @@ cd Pyrogram-Session-Generator
 
 ### 2. Install Dependencies
 
+#### Create virtual environment
 ```bash
-pip install pyrogram tgcrypto
+python3 -m venv venv
+```
+
+#### Activate it
+```bash
+source venv/bin/activate
+```
+
+#### Install requirements
+```bash
+pip install -r requirements.txt
 ```
 
 ### 3. Get Your API Credentials
