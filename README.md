@@ -55,6 +55,8 @@ source venv/bin/activate
 
 #### Install requirements
 ```bash
+apt update
+apt install -y build-essential python3-dev
 pip install -r requirements.txt
 ```
 
