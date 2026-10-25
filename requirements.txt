@@ -1,7 +1,7 @@
 # Pyrogram Session String Generator Dependencies
 
 # Core Pyrogram library for Telegram MTProto API
-pyrotgfork
+wzgram
 
 # Fast cryptographic library for better performance
 # Required for encryption/decryption operations
